@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro site</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: white;
+}
+
+h1 {
+    color: orangered;
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao meu site! </h1>
+
+    <p>Digite seu nome:</p>
+    <input type="text" id="nomeInput" placeholder="Seu nome aqui">
+    <button onclick="mostrarMensagem()">Enviar</button>
+
+    <p id="mensagem"></p>
+
+    <script src="script.js"></script>
+    <script>
+        function mostrarMensagem() {
+    let nome = document.getElementById("nomeInput").value;
+    let mensagem = document.getElementById("mensagem");
+
+    if (nome === "") {
+        mensagem.textContent = "Por favor, digite seu nome!";
+        mensagem.style.color = "red";
+    } else {
+        mensagem.textContent = "Olá, " + nome + "! Seja bem-vindo!";
+        mensagem.style.color = "green";
+    }
+}
+
+    </script>
+
+</body>
+</html>

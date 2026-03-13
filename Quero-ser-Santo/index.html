@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quero ser Santo</title>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+
+        background-image: url('img/background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        color: #ffd700;
+        text-shadow: 2px 2px 8px black;
+    }
+
+    h2 {
+        color: #add8e6;
+    }
+
+    h3 {
+        color: red;
+    }
+
+    strong {
+        color: black;
+    }
+
+    .pagina {
+    opacity: 0;
+    transition: opacity 0.6s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+    .ativo {
+        opacity: 1;
+    }
+
+.overlay {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: center; /* CENTRALIZA TEXTO */
+}
+
+    .overlay h1 {
+        font-size: 48px;
+    }
+.menu{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+
+    background: rgba(0,0,0,0.8);
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 1000;
+}
+
+.menu h2{
+    color: gold;
+    text-align: center;
+}
+
+.menu button{
+    background: gold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagina{
+    padding-left: 240px;
+}
+    button {
+        padding: 10px 20px;
+        margin: 10px 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: gold;
+        font-weight: bold;
+    }
+
+    input {
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+    }
+    h1 {
+        color:#90ee90;
+    }
+
+    .duas-colunas{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas partes iguais */
+    gap: 20px;
+    text-align: left;
+}
+
+.duas-colunas p{
+    margin: 0;
+}
+
+    #login {
+        color: #90ee90;
+    }
+
+    #historia {
+        color: blue;
+    }
+
+    #confissao {
+        color: #add8e6;
+    }
+
+    #santidade {
+        color: black;
+    }
+</style>
+</head>
+<body>
+
+<!-- MENU LATERAL-->
+<div class="menu">
+    <h2>Menu</h2>
+
+    <button onclick="irPara('login')">Início</button>
+    <button onclick="irPara('historia')">São João Paulo II</button>
+    <button onclick="irPara('confissao')">Confissão</button>
+    <button onclick="irPara('santidade')">Santidade</button>
+    <button onclick="irPara('batismo')">Batismo</button>
+    <button onclick="irPara('primeiraeucaristia')">Eucaristia</button>
+    <button onclick="irPara('crisma')">Crisma</button>
+    <button onclick="irPara('reconciliacao')">Reconciliação</button>
+    <button onclick="irPara('uncaodosenfermos')">Unção dos Enfermos</button>
+    <button onclick="irPara('ordem')">Ordem</button>
+    <button onclick="irPara('matrimonio')">Matrimônio</button>
+</div>
+
+    <!-- PAGINA LOGIN -->
+<div id="login" class="pagina ativo" style="background-image: url('basilica.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+        <h1>Bem-vindo</h1>
+        <h1>Seja Santo</h1>
+        <h2>A EUCARISTIA é a minha estrada para o Céu</h2>
+
+        <button onclick="irPara('historia')">Entrar</button>
+    </div>
+</div>
+
+<!-- PAGINA 2 HISTORIA -->
+<div id="historia" class="pagina" style="background-image: url('joaopauloii.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
+    <div class="overlay">
+        <h1>São João Paulo II</h1>
+        <p>
+            <h2>Karol Józef Wojtyła</h2>
+        Karol Józef Wojtyła nasceu em 18 de maio de 1920, em Wadowice.
+        Era o mais novo de três irmãos (sua irmã, Olga, morreu antes de seu nascimento).
+        Filho do oficial do exército polonês, Karol, e de Emilia Kaczorowska, teve uma gestação de risco.
+        Os médicos até chegaram a aconselhar a mãe que interrompesse a gravidez, dado ao risco de vida que corria.
+        Porém, num gesto profético, Emilia opta pela gestação daquele que, anos à frente, seria um grande defensor da família e da vida.
+
+            <h2>Pontífice</h2>
+        Wojtyla foi eleito Papa em 16 de outubro de 1978, no conclave que sucedeu a morte do Papa João Paulo I.
+        Era a primeira vez, em cerca de 450, que era eleito um Papa não italiano.
+        Escolheu o nome João Paulo II e implantou em seu papado os valores
+        que tinha aprendido ao longo da vida no anúncio do Evangelho de Cristo.
+        João Paulo II criou as Jornadas Mundiais da Juventude, escreveu 14 encíclicas,
+        organizou 15 assembleias do Sínodo dos Bispos, nomeou 231 cardeais, beatificou 1338 pessoas e canonizou 482 santos.
+        Mas foi além das palavras e demonstrou sua santidade, mesmo nos momentos de dor. 
+
+            <h2>Devoção a Maria: <strong>Totus Tuus</strong></h2>
+        Com o lema “Totus tuus”, “todo teu, Maria”, declarou seu amor e total devoção a Virgem Maria,
+        particularmente a Nossa Senhora de Częstochowa, padroeira da Polônia.
+        E foi a Virgem Maria que o Papa atribuiu a sobrevivência ao atentado que sofreu em 13 de maio de 1981.
+        O terço era sua oração predileta, raramente visto sem ele, Papa São João Paulo II que institui
+        os mintérios luminosos do Rósario.
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('confissao')">Próxima Página</button>
+    </div>
+</div>
+
+<!-- PAGINA 3 CONFISSAO -->
+<div id="confissao" class="pagina" style="background-image: url('confissao.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
+    <div class="overlay">
+        <h1>Como ter uma Boa Confissão</h1>
+
+        <p>
+            Poucas coisas são tão importantes quanto saber confessar-se bem. O sacramento da Penitência,
+            com efeito, foi instituído por Cristo para que os pecados cometidos após o Batismo,
+            em virtude da absolvição sacramental, fossem perdoados ao fiel contrito e confessado.
+            Daí se vê o quão necessário à salvação é este sacramento, cuja necessidade se equipara à do Batismo,
+            ao menos para os que se afastaram de Deus pelo pecado grave.
+
+            Somente por ele, de lei ordinária, o homem em pecado pode reconciliar-se com Deus,
+            que dele se serve para infundir novamente a graça santificante e perdoar tanto a culpa
+            quanto o reato da pena eterna, isto é, do inferno. A experiência mostra, além disso, que este sacramento, para quem o recebe com devoção,
+            devolve a paz de consciência e produz, não raro, grande consolação de espírito.
+        </p>    
+
+        <p>
+        1. Fazer um exame de consciência.<br>
+        2. Arepender-se sinceramente dos pecados.<br>
+        3. Confessar ao sacerdote com humildade.<br>
+        4. Receber a absolvição com fé.<br>
+        5. Cumprir a penitência proposta.<br><br>
+
+        A confissão é um sacramento de cura e misericórdia.
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('santidade')">Próxima Página</button>
+    </div>
+</div>
+
+<!-- PAGINA 4 SANTIDADE -->
+<div id="santidade" class="pagina" style="background-image: url('santidade.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
+    <div class="overlay">
+        <h1>Como Ser Santo</h1>
+
+        <p>
+        Para ter uma vida Santa devemos ir a Missa frequentimente, se confessar
+        com regularidade para poder receber o Corpo de Cristo.
+        Ter uma vida de oração, rezando o terço diariamente
+        como São João Paulo II fazia.
+        Tudo que fizer, faça com amor e para Deus.
+        </p>
+
+        <p>
+        Ser santo significa viver em amizade com Deus todos os dias.
+        Alguns passos importantes:
+        <br><br>
+        • Rezar diariamente<br>
+        • Participar da missa<br>
+        • Amar o próximo<br>
+        • Praticar o perdão<br>
+        • Buscar a vontade de Deus<br><br>
+
+        A santidade é possível para todos!
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('batismo')">PróximaPagina</button>
+    </div>
+</div>
+
+<!-- PAGINA 5 BATISMO -->
+ <div id="batismo" class="pagina" style="background-image: url(batismo.jfif); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+        <h1>Batismo</h1>
+
+        <h2>O que é o Batismo?</h2>
+
+        <p>
+            O Batismo é o primeiro sacramento, essencial para a salvação,
+            é ele que purifica do pecado original. Somente a partir dele que
+            vem os outros sacramentos.
+
+        
+                <h2>✝️ O que é o Batismo?</h2>
+
+        <p>
+            <h3>O Batismo é o sacramento pelo qual a pessoa:</h3>
+
+            É libertada do pecado original <br>
+
+            Torna-se filha de Deus <br>
+
+            Passa a fazer parte da Igreja, o Corpo de Cristo <br>
+
+            Por meio da água e da invocação da Santíssima Trindade (Pai, Filho e Espírito Santo), a pessoa inicia sua vida cristã. <br>
+
+        </p>
+             <h2>Como acontece o Batismo?</h2>
+
+        <p>    
+            <h3>Durante a celebração, o ministro (normalmente um padre ou diácono):</h3>
+
+            Derrama água na cabeça da pessoa ou a mergulha na água. <br>
+
+            Diz a fórmula: <br>
+            <strong>“Eu te batizo em nome do Pai, do Filho e do Espírito Santo.”</strong>
+
+        </p>
+            <h2>Quem pode ser batizado?</h2>
+
+        <p>
+            Bebês (o mais comum na Igreja Católica) <br>
+
+            Crianças <br>
+
+            Jovens ou adultos que ainda não foram batizados <br>
+        </p>
+        <p>
+            Muitas pessoas se perguntam porque na Igreja Catolica se batiza 
+            ainda quando é um bebe, mais muitas coisa você não vai esperar
+            o bebe nascer para perguntam para ele se ele quer comer
+            ou quuer tomar banho, os pais vão la e dão banho e comida para ele
+            é a mesma coisa com o batismo os pais vão tomar a decisão para 
+            o filho.
+        </p>
+            <h2>🕊️ Principais sinais do Batismo</h2>
+
+        <p>
+            <h3>Alguns símbolos usados na celebração são:</h3>
+            
+            Água – purificação e nova vida <br>
+
+            Óleo (Santo Crisma) – consagração a Deus <br>
+
+            Vela acesa – a luz de Cristo <br>
+
+            Veste branca – vida nova e pureza <br>
+        </p>
+
+        </p>    
+
+        <p>
+            <strong>“Ide, fazei discípulos de todas as nações,
+            batizando-os em nome do Pai, do Filho e do Espírito Santo.”</strong>
+            (Mateus 28,19)
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('primeiraeucaristia')">PróximaPágina</button>
+    </div>
+</div>
+
+<!-- PAGINA 6 PRIMEIRA EUCARISTIA-->
+<div id="primeiraeucaristia" class="pagina" style="background-image: url(primeira-comunhão.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+
+        <h1>Primeira Eucaristia</h1>
+    
+                <h2>✝️ O que é a Primeira Eucaristia?</h2>
+            <p>    
+            É a primeira vez que uma pessoa participa plenamente da comunhão na Santa Missa,
+            recebendo a hóstia consagrada, que para os católicos é realmente o Corpo de Cristo.
+            </p>
+
+                <h2>📖 Origem da Eucaristia</h2>
+            <p>
+            A Eucaristia foi instituída por Jesus na Última Ceia, quando Ele disse aos apóstolos:
+            </p>
+            <p>
+            <strong>“Isto é o meu corpo... fazei isto em memória de mim.”</strong>
+            </p>
+
+                <h2>👦 Quem pode fazer a Primeira Eucaristia?</h2>
+
+            <h3>Normalmente:</h3>
+
+            Crianças a partir de 7 a 10 anos <br>
+
+            Jovens ou adultos que ainda não receberam esse sacramento <br>
+
+            Antes, é necessário fazer catequese para aprender sobre a fé católica. <br>
+
+                <h2>🙏 O que é necessário antes da Primeira Comunhão?</h2>
+
+            <h3>A Igreja ensina que a pessoa deve:</h3>
+
+            Ter sido batizada no Batismo <br>
+
+            Saber o significado da Eucaristia <br>
+
+            Fazer a Confissão (primeira confissão) <br>
+
+                <h2>🍞 O que significa a Eucaristia?</h2>
+            
+            <h3>Ela representa:</h3>
+
+            União com Cristo <br>
+
+            Alimento espiritual da alma <br>
+
+            Memória do sacrifício de Jesus <br>
+        
+            <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('crisma')">PróximaPágina</button>
+    </div>
+</div>        
+
+<!-- PAGINA 7 CRISMA-->
+ <div id="crisma" class="pagina" style="background-image: url(crisma.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+
+        <h1>Crisma</h1>
+
+                <h2>✝️ O que é a Crisma?</h2>
+
+            Na Crisma, o fiel recebe uma força especial do Espírito Santo para viver e defender a fé cristã.
+            Ela confirma e completa a graça do Batismo.
+
+                <h2>🕊️ O que acontece na Crisma?</h2>
+
+            <h3>Durante a celebração, geralmente realizada por um bispo, acontece:</h3>
+
+            Imposição das mãos sobre os crismandos <br>
+
+            Unção com o óleo do Crisma na testa <br>
+
+            O Sacerdote diz:
+            <strong>“Recebe, por este sinal, o dom do Espírito Santo.”</strong>
+
+                <h2>👥 Quem pode receber a Crisma?</h2>
+
+            Jovens ou adultos que já foram batizados <br>
+
+            Que fizeram preparação na catequese de Crisma <br>
+
+            Que já receberam a Eucaristia <br>
+
+                <h2>🔥 Significado da Crisma</h2>
+
+            <h3>A Crisma representa:</h3>
+
+            Fortalecimento da fé <br>
+
+            Envio para a missão cristã <br>
+
+            Maior união com a Igreja <br>
+
+            <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('reconciliacao')">PróximaPagina</button>
+    </div>
+</div>
+
+<!-- PAGINA 8 RECONCILIAÇÃO-->
+<div id="reconciliacao" class="pagina" style="background-image: url(reconciliação.png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+
+        <h1>reconciliação</h1>
+
+                <h2>✝️ O que é o Sacramento da Reconciliação?</h2>
+
+            É o sacramento em que o fiel confessa seus pecados a um sacerdote,
+            demonstra arrependimento e recebe o perdão de Deus. <br>
+
+            Esse sacramento foi instituído por Jesus Cristo,
+            que deu aos apóstolos o poder de perdoar pecados. <br>
+
+                <h2>📖 Base na Bíblia</h2>
+
+            Jesus disse aos apóstolos:
+        
+            <strong>“A quem perdoardes os pecados, eles lhes serão perdoados.”
+            (João 20,23)<br> </strong>
+
+                <h2>🙏 Como acontece a Confissão?</h2>
+
+            <h3>Normalmente segue alguns passos:</h3>
+
+            Exame de consciência – lembrar dos pecados cometidos <br>
+
+            Arrependimento – desejar mudar de vida <br>
+
+            Confissão dos pecados ao padre <br>
+
+            Absolvição – o sacerdote dá o perdão em nome de Deus <br>
+
+            Penitência – oração ou ação para reparar o pecado <br>
+
+                <h2>❤️ O que esse sacramento traz?</h2>
+
+            Perdão dos pecados <br>
+
+            Reconciliação com Deus <br>
+
+            Paz na consciência <br>
+
+            Força para evitar o pecado <br>
+
+                <h2>👤 Quem pode receber?</h2>
+
+            Qualquer católico que já recebeu o Batismo. <br>
+
+            Normalmente ele é recebido antes da Eucaristia,
+            especialmente quando há pecado grave. <br>
+
+        <p>
+           <strong> Se quer ter uma boa confissão volte para a pagina de confissão. </strong>
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('confissao')">Confissão</button>
+        <button onclick="irPara('uncaodosenfermos')">PróximaPagina</button>
+    </div>
+</div>
+
+<!-- PAGINA 9 UNÇÃO DOS ENFERMOS-->
+<div id="uncaodosenfermos" class="pagina" style="background-image: url(unçao-dos-infermos.png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+
+        <h1>Unção dos Enfermos</h1>
+
+        <p>
+            Ela é destinada às pessoas que estão doentes ou em estado
+            de fragilidade física pu espiritual.
+        </p>
+
+        <p>
+            “Está alguém doente? Chame os presbíteros da Igreja para que orem sobre ele,
+            ungindo-o com óleo em nome do Senhor.” (Tiago: 5, 14-15)
+        </p>
+
+        <h2>📖 O que é?</h2>
+
+        <p>
+            <h3>É o sacramento pelo qual a Igreja confia o doente a Deus, pedindo:</h3>
+
+            Conforto <br>
+
+            Força <br>
+
+            Paz <br>
+
+            Coragem <br>
+
+            Perdão dos pecados (quando a pessoa não pode se confessar) <br>
+
+        </p>
+
+        <h2>🕊️ Quem pode receber?</h2>
+
+        <p>
+            Pessoas gravemente doentes <br>
+
+            Idosos com saúde fragilizada <br>
+
+            Pessoas que vão passar por cirurgia séria <br>
+
+        </p>    
+            <h3>⚠️ Não é apenas para quem está à beira da morte (antigamente era chamada de “extrema-unção”).</h3>
+
+            <h2>✝️ Como é realizada?</h2>
+
+        <p>
+            <h3>O sacerdote:</h3>
+
+            Impõe as mãos sobre o doente <br>
+
+            Reza pedindo a graça de Deus <br>
+
+            Ungue a testa e as mãos com óleo santo (Óleo dos Enfermos) <br>
+        </p>
+    
+        <h2>💖 Quais são os efeitos?</h2>
+
+        <p>
+            União do doente ao sofrimento de Cristo <br>
+
+            Fortalecimento espiritual <br>
+
+            Perdão dos pecados (se necessário) <br>
+
+            Às vezes, recuperação da saúde física, se for da vontade de Deus <br>
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('ordem')">PróximaPagina</button>
+    </div>
+</div>
+
+<!-- PAGINA 10 ORDEM-->
+<div id="ordem" class="pagina" style="background-image: url(ordem.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+
+        <h1>Ordem</h1>
+
+        <h2>✝️ O que é o Sacramento da Ordem?</h2>
+
+            É o sacramento que confere a missão de ensinar,
+            santificar e guiar o povo de Deus em nome de Jesus Cristo. <br>
+
+            Por meio dele, a pessoa passa a fazer parte do ministério ordenado da Igreja. <br>
+
+
+            <h2>👤 Graus do Sacramento da Ordem</h2>
+
+            <h3>O sacramento possui três graus:</h3>
+
+            Diácono – ajuda na liturgia, proclama o Evangelho e pode realizar batismos e casamentos. <br>
+
+            Padre (presbítero) – celebra a Missa, perdoa pecados e cuida da comunidade. <br>
+
+            Bispo – possui a plenitude do sacramento e pode ordenar padres e diáconos. <br>
+
+
+            <h2>🙏 Como acontece a ordenação?</h2>
+
+            <h3>Durante a celebração:</h3>
+
+            O bispo impõe as mãos sobre o candidato <br>
+
+            Faz uma oração de consagração <br>
+
+            O candidato é oficialmente ordenado <br>
+
+            <h2>📖 Origem na Bíblia</h2>
+
+            Jesus escolheu os Apóstolos para continuarem sua missão de anunciar o Evangelho e cuidar da Igreja. <br>
+
+
+            <h2>❤️ Missão de quem recebe a Ordem</h2>
+
+            Anunciar a Palavra de Deus <br>
+
+            Celebrar os sacramentos <br>
+
+            Guiar a comunidade cristã <br>
+
+            <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('matrimonio')">PróximaPagina</button>
+    </div>
+</div>
+
+<!-- PAGINA 11 MATRIMONIO-->
+<div id="matrimonio" class="pagina" style="background-image: url(matrimonio.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="overlay">
+
+        <h1>Matrimonio</h1>
+
+        <p>
+            Ele é a aliança sagrada entre um homem e uma mulher,
+            feita diante de Deus, com o compromisso de amor fiel e para sempre.
+        </p>
+
+        <p>
+            Mateus 19,6:
+            <br><br>
+            <strong>“Portanto, o que Deus uniu, o homem não separe.” <br> </strong>
+        </p>
+
+        <h2>📖 O que é o Matrimônio?</h2>
+
+        <p>
+            <h3>É o sacramento pelo qual:</h3>
+
+            O casal se une em amor e fidelidade <br>
+
+            Recebe a graça de Deus para viver essa vocação <br>
+
+            Forma uma família aberta à vida <br>
+
+            A Igreja ensina que o casamento é indissolúvel, ou seja, é para toda a vida. <br>
+        </p>
+
+
+            <h2>💍 Quem celebra o sacramento?</h2>
+
+        <p>
+            <h3>No Matrimônio:</h3>
+
+            Os próprios noivos são os ministros do sacramento (eles se dão o consentimento). <br>
+
+            O padre ou diácono é a testemunha oficial da Igreja. <br>
+        </p>
+
+            <h2>❤️ Finalidades do Matrimônio</h2>
+
+        <p>
+            União e ajuda mútua do casal <br>
+
+            Geração e educação dos filhos <br>
+
+            Crescimento na fé e santidade <br>
+        </p>
+
+            <h2>✝️ Efeitos do sacramento</h2>
+
+        <p>
+            Graça para viver o amor com fidelidade <br>
+
+            Força para enfrentar dificuldades <br>
+
+            União espiritual especial entre os cônjuges <br>
+        </p>
+
+        <button onclick="voltar()">⬅ Voltar</button>
+        <button onclick="irPara('login')">Sair</button>
+    </div>
+</div>
+
+<script>
+
+   let paginaAtual = "login";
+let historico = [];
+
+function irPara(pagina){
+
+    const atual = document.getElementById(paginaAtual);
+    if(atual){
+        atual.classList.remove("ativo");
+        historico.push(paginaAtual);
+    }
+
+    const novaPagina = document.getElementById(pagina);
+
+    if(novaPagina){
+        novaPagina.classList.add("ativo");
+        paginaAtual = pagina;
+    }
+
+}
+
+function voltar(){
+
+    if(historico.length > 0){
+
+        document.getElementById(paginaAtual).classList.remove("ativo");
+
+        paginaAtual = historico.pop();
+
+        document.getElementById(paginaAtual).classList.add("ativo");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

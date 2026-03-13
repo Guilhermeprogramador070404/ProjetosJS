@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo de Adivinhar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #4e73df;
+            color: white;
+        }
+        button:hover {
+            background-color: #2e59d9;
+        }
+        .mensagem {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .tentativas, .historico {
+            margin-top: 10px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adivinhe o Número</h1>
+        <p>Escolhi um número entre 1 e 100!</p>
+
+        <input type="number" id="palpite" placeholder="Digite seu palpite">
+        <br>
+        <button onclick="verificarPalpite()">Enviar</button>
+        <button onclick="reiniciarJogo()">Reiniciar</button>
+
+        <div class="mensagem" id="mensagem"></div>
+        <div class="tentativas" id="tentativas"></div>
+        <div class="historico" id="historico"></div>
+    </div>
+
+    <script>
+        let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+        let tentativas = 0;
+        let palpites = [];
+
+        function verificarPalpite() {
+            const palpiteInput = document.getElementById("palpite");
+            const mensagem = document.getElementById("mensagem");
+            const tentativasTexto = document.getElementById("tentativas");
+            const historicoTexto = document.getElementById("historico");
+
+            // Declarar o palpite antes de usar
+            let palpite = Number(palpiteInput.value);
+
+            // Validar número
+            if (isNaN(palpite) || palpite < 1 || palpite > 100) {
+                mensagem.innerText = "Digite um número válido entre 1 e 100!";
+                mensagem.style.color = "red";
+                palpiteInput.value = "";
+                palpiteInput.focus();
+                return;
+            }
+
+            // Adicionar ao histórico
+            palpites.push(palpite);
+
+            // Incrementar tentativas
+            tentativas++;
+
+            // Checar palpite
+            if (palpite === numeroSecreto) {
+                mensagem.innerText = "Você acertou!";
+                mensagem.style.color = "green";
+            } else if (palpite < numeroSecreto) {
+                mensagem.innerText = "O número é MAIOR";
+                mensagem.style.color = "orange";
+            } else {
+                mensagem.innerText = "O número é MENOR";
+                mensagem.style.color = "orange";
+            }
+
+            // Atualizar tentativas e histórico
+            tentativasTexto.innerText = "Tentativas: " + tentativas;
+            historicoTexto.innerText = "Números já tentados: " + palpites.join(", ");
+
+            // Limpar input
+            palpiteInput.value = "";
+            palpiteInput.focus();
+        }
+
+        function reiniciarJogo() {
+            numeroSecreto = Math.floor(Math.random() * 100) + 1;
+            tentativas = 0;
+            palpites = [];
+            document.getElementById("mensagem").innerText = "";
+            document.getElementById("tentativas").innerText = "";
+            document.getElementById("historico").innerText = "";
+            document.getElementById("palpite").value = "";
+        }
+    </script>
+</body>
+</html>
