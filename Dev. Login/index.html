@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dev. Front-End</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", Arial;
+}
+
+body{
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+color:white;
+}
+
+/* canvas matrix */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* caixa login */
+
+.login-box{
+background:#0d1117;
+padding:40px;
+border-radius:12px;
+width:320px;
+box-shadow:0 0 20px #00ff9d;
+text-align:center;
+}
+
+.login-box h1{
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#161b22;
+border:1px solid #30363d;
+border-radius:6px;
+color:white;
+}
+
+input:focus{
+outline:none;
+border:1px solid #00ff9d;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#00ff9d;
+border:none;
+border-radius:6px;
+color:black;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#mensagem{
+margin-top:15px;
+color:#ff6b6b;
+}
+
+</style>
+</head>
+
+<body>
+<!--Login Box-->
+
+<canvas id="matrix"></canvas>
+
+<div class="login-box">
+
+<h1>DevLogin</h1>
+
+<input type="text" id="user" placeholder="Usuário">
+
+<input type="password" id="pass" placeholder="Senha">
+
+<button onclick="login()">Entrar</button>
+
+<p id="mensagem"></p>
+
+</div>
+
+<script>
+
+/* LOGIN */
+
+function login(){
+
+let usuario = document.getElementById("user").value
+let senha = document.getElementById("pass").value
+
+if(usuario === "dev" && senha === "123"){
+alert("Bem-vindo programador 🚀")
+}
+else{
+document.getElementById("mensagem").innerText =
+"Usuário ou senha incorretos"
+}
+
+}
+
+/* MATRIX EFFECT */
+
+const canvas = document.getElementById("matrix")
+const ctx = canvas.getContext("2d")
+
+canvas.height = window.innerHeight
+canvas.width = window.innerWidth
+
+const letras = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const arrayLetras = letras.split("")
+
+const tamanhoFonte = 16
+const colunas = canvas.width / tamanhoFonte
+
+const gotas = []
+
+for(let x = 0; x < colunas; x++)
+gotas[x] = 1
+
+function desenhar(){
+
+ctx.fillStyle = "rgba(0,0,0,0.05)"
+ctx.fillRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle = "#00ff9d"
+ctx.font = tamanhoFonte + "px monospace"
+
+for(let i = 0; i < gotas.length; i++){
+
+const texto = arrayLetras[Math.floor(Math.random()*arrayLetras.length)]
+
+ctx.fillText(texto, i*tamanhoFonte, gotas[i]*tamanhoFonte)
+
+if(gotas[i]*tamanhoFonte > canvas.height && Math.random() > 0.975)
+gotas[i] = 0
+
+gotas[i]++
+
+}
+
+}
+
+setInterval(desenhar,33)
+
+</script>
+
+</body>
+</html>
